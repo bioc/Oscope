@@ -15,10 +15,9 @@
 #' @author Ning Leng
 
 SineFun <- function(DataInSc,i){
-		expect_is(DataInSc, "matrix")
-		expect_is(i, c("numeric","integer"))
-		NumGene <- nrow(DataInSc)
-		out <- sapply((i+1):NumGene,function(j){
+		#expect_is(DataInSc, "matrix")
+		#expect_is(i, c("numeric","integer"))
+		out <- sapply((i+1):nrow(DataInSc),function(j){
 		a1 <- SineOptim(cbind(DataInSc[i,],DataInSc[j,]))
 		a1
 			},simplify=FALSE)
